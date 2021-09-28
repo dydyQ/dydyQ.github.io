@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="动态规划问题动态规划，如果某一个问题有很多重叠的子问题，使用动态规划。动态规划中的每个状态都是由上一个状态推导出来的。 动态规划的解题步骤对于动态涉及到动态规划的问题，首先要分析题目，有的题目还要将问题进行简化以及转化，具体的：  确定dp数组以及下标的含义 确定递推公式 dp数组初始化的方式 确定遍历顺序 举例推导dp数组  动态规划问题debug的方法debug的最佳方式就是把dp数组打印出来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/09/10/hello-world/index.html">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://example.com/2021/09/27/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%BC%80%E7%AF%87/index.html">
 <meta property="og:site_name" content="coder DY">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="动态规划问题动态规划，如果某一个问题有很多重叠的子问题，使用动态规划。动态规划中的每个状态都是由上一个状态推导出来的。 动态规划的解题步骤对于动态涉及到动态规划的问题，首先要分析题目，有的题目还要将问题进行简化以及转化，具体的：  确定dp数组以及下标的含义 确定递推公式 dp数组初始化的方式 确定遍历顺序 举例推导dp数组  动态规划问题debug的方法debug的最佳方式就是把dp数组打印出来">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-10T13:05:53.437Z">
-<meta property="article:modified_time" content="2021-09-10T13:05:53.438Z">
+<meta property="article:published_time" content="2021-09-27T07:17:07.000Z">
+<meta property="article:modified_time" content="2021-09-27T07:44:49.368Z">
 <meta property="article:author" content="DY">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/09/10/hello-world/">
+<link rel="canonical" href="http://example.com/2021/09/27/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%BC%80%E7%AF%87/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/10/hello-world/","path":"2021/09/10/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/27/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%BC%80%E7%AF%87/","path":"2021/09/27/动态规划之开篇/","title":"动态规划"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | coder DY</title>
+<title>动态规划 | coder DY</title>
   
 
 
@@ -116,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">动态规划问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.</span> <span class="nav-text">动态规划的解题步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98debug%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">动态规划问题debug的方法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -139,7 +139,7 @@
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -178,7 +178,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/27/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%BC%80%E7%AF%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          动态规划
         </h1>
 
         <div class="post-meta-container">
@@ -201,8 +201,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-09-10 21:05:53" itemprop="dateCreated datePublished" datetime="2021-09-10T21:05:53+08:00">2021-09-10</time>
+      <time title="创建时间：2021-09-27 15:17:07 / 修改时间：15:44:49" itemprop="dateCreated datePublished" datetime="2021-09-27T15:17:07+08:00">2021-09-27</time>
     </span>
 
   
@@ -215,19 +216,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h1 id="动态规划问题"><a href="#动态规划问题" class="headerlink" title="动态规划问题"></a>动态规划问题</h1><p>动态规划，如果某一个问题有很多重叠的子问题，使用动态规划。动态规划中的每个状态都是由上一个状态推导出来的。</p>
+<h2 id="动态规划的解题步骤"><a href="#动态规划的解题步骤" class="headerlink" title="动态规划的解题步骤"></a>动态规划的解题步骤</h2><p>对于动态涉及到动态规划的问题，首先要分析题目，有的题目还要将问题进行简化以及转化，具体的：</p>
+<ol>
+<li>确定dp数组以及下标的含义</li>
+<li>确定递推公式</li>
+<li>dp数组初始化的方式</li>
+<li>确定遍历顺序</li>
+<li>举例推导dp数组</li>
+</ol>
+<h2 id="动态规划问题debug的方法"><a href="#动态规划问题debug的方法" class="headerlink" title="动态规划问题debug的方法"></a>动态规划问题debug的方法</h2><p>debug的最佳方式就是把dp数组打印出来，与自己推导的结果对比。</p>
 
     </div>
 
@@ -241,10 +239,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2021/09/27/C-%E7%B1%BB/" rel="prev" title="(C++)类">
+                  <i class="fa fa-chevron-left"></i> (C++)类
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/27/C-%E7%B1%BB/" rel="next" title="(C++)类">
-                  (C++)类 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/09/27/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" rel="next" title="动态规划之整数拆分">
+                  动态规划之整数拆分 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
